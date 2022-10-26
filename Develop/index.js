@@ -25,7 +25,7 @@ const questions = [
   },
 
   {
-    message: "What is are is the usage information?",
+    message: "What is the usage information?",
     type: "input",
     name: "usageInformation",
   },
@@ -33,7 +33,7 @@ const questions = [
   {
     message: "What is the project license?",
     type: "list",
-    choices: ["none"],
+    choices: ["Apache 2.0", "Boost", "BSD", "BSD 3-Clause", "none"],
     name: "licenseInformation",
   },
 
@@ -50,24 +50,65 @@ const questions = [
   },
 
   {
-    message: "What is are is your git hub user name?",
+    message: "What is your git hub user name?",
     type: "username",
     name: "ghUserName",
   },
 
   {
-    message: "What is are is your email address?",
+    message: "What is your email address?",
     type: "email",
     name: "emailAddress",
   },
 ];
 
-inquirer.prompt(questions).catch((err) => console.log(err));
+inquirer
+  .prompt(questions)
+  .then(writeToFile)
+  .catch((err) => console.log(err));
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(res) {
+  let markdown = `
+![license](https://img.shields.io/badge/License-${res.licenseInformation.replace(
+    " ",
+    "%20"
+  )}-lightblue.svg)
+# ${res.title}
 
-// TODO: Create a function to initialize app
+## Description 
+${res.description}
+
+## Table of Contents
+
+
+
+## Installation
+${res.installationInstructions}
+
+## Usage
+${res.usageInformation}
+
+## License
+${res.licenseInformation}
+
+## Contributing
+${res.contGuidelines}
+
+## Tests
+${res.testInstructions}
+
+## Questions
+${res.ghUserName}
+
+${res.emailAddress}
+
+    `;
+  // write a markdown file named sampleReadme
+  fs.writeFileSync("sampleReadme.md", markdown);
+}
+
+// Create a function to initialize app
 function init() {}
 
 // Function call to initialize app

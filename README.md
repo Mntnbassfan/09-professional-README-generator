@@ -33,3 +33,5 @@ THEN I am taken to the corresponding section of the README
 https://github.com/Mntnbassfan/09-professional-README-generator
 
 ## Walkthrough Video
+
+https://drive.google.com/file/d/1AbSfyUOOsrUdi3r17nXLItWk-HccW42S/view

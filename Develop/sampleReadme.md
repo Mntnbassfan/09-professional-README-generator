@@ -1,32 +1,32 @@
 
-![license](https://img.shields.io/badge/License-Apache%202.0-lightblue.svg)
-# read me generator
+![license](https://img.shields.io/badge/License-Boost-lightblue.svg)
+# readme generator
 
 ## Description 
-create a readme file for the project
+genrates a readme markdown file
 
 ## Table of Contents
 
 
 
 ## Installation
-cloce from git hub
+n/a at this point
 
 ## Usage
 follow the prompts
 
 ## License
-Apache 2.0
+Boost
 
 ## Contributing
-conduct a pull request
+do a pull request
 
 ## Tests
-not sure
+n/a at this point
 
 ## Questions
-tim@github.com
+mntndude@github.com
 
-tim@yahoo.com
+mntndude@yahoo.com
 
     
